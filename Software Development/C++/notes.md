@@ -164,7 +164,7 @@ As with comparison operators, you can also test for true (1) or false (0) values
 
 A string variable contains a collection of characters surrounded by double quotes.
 
-To use strings, you must include an additional header file in the source code, the <string> library.
+To use strings, you must include an additional header file in the source code, the \<string\> library.
 
 
 
