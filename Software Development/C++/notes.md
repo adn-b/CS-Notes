@@ -169,32 +169,32 @@ To use strings, you must include an additional header file in the source code, t
 
 
 
-- C++ Math
-- C++ Booleans
-- C++ Conditions
-- C++ Switch
-- C++ While Loop
-- C++ For Loop
-- C++ Break/Continue
-- C++ Arrays
-- C++ Structures
-- C++ References
-- C++ Pointers
+## C++ Math
+## C++ Booleans
+## C++ Conditions
+## C++ Switch
+## C++ While Loop
+## C++ For Loop
+## C++ Break/Continue
+## C++ Arrays
+## C++ Structures
+## C++ References
+## C++ Pointers
 
 
 
 
-- C++ Functions
-- C++ Function Parameters
-- C++ Function Overloading
-- C++ Recursion
-- C++ OOP
-- C++ Classes/Objects
-- C++ Class Methods
-- C++ Constructors
-- C++ Access Specifiers
-- C++ Encapsulation
-- C++ Inheritance
-- C++ Polymorphism
-- C++ Files
-- C++ Exceptions
+## C++ Functions
+## C++ Function Parameters
+## C++ Function Overloading
+## C++ Recursion
+## C++ OOP
+## C++ Classes/Objects
+## C++ Class Methods
+## C++ Constructors
+## C++ Access Specifiers
+## C++ Encapsulation
+## C++ Inheritance
+## C++ Polymorphism
+## C++ Files
+## C++ Exceptions
