@@ -1,12 +1,6 @@
 # C++ Notes - Aidan Butler
 ### Following the W3Schools curriculum with my own insight and touch.
 
-# Table of Contents
-1. [C++ Basics](#basics)
-2. [Example2](#example2)
-3. [Third Example](#third-example)
-4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
-
 ## C++ Basics 
 
 C++ is an extension of the C language, and uses almost identical syntax. The main difference is that C++ supports classes and objects, and is therefore considered object-oriented.
@@ -1314,7 +1308,7 @@ int main() {
 // Bonus: 15000 
 ```
 
-**The protected access specificer essentially just means that the derived, or child class can be used to access the protected attributes through set and get functions.  
+**The protected access specificer essentially just means that the derived, or child class can be used to access the protected attributes through set and get functions.**
 
 
 ## C++ Polymorphism
