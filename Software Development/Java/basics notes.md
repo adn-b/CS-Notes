@@ -668,3 +668,9 @@ for (int[] row : myNumbers) {
   }
 }
 ```
+
+## Footnote
+
+This has been my basic Java notes, please use at your leisure for studying or reference. I hope they are of use :)
+
+Aidan Butler - https://aidan.vip
