@@ -473,8 +473,254 @@ Python divides the operators in the following groups:
 - Membership operators
 - Bitwise operators
 
+### Arithmetic Operators
+
+Arithmetic operators are used with numeric values to perform common mathematical operations.
+
+| Operator | Name | Example |
+|:--------:|:----:|:-------:|
+| + | Addition | x + y 	
+| - | Subtraction | x - y 	
+| * | Multiplication | x * y 	
+| / | Division | x / y 	
+| % | Modulus | x % y
+| ** | Exponentiation | x ** y |
+| // | Floor division | x // y |
+
+### Assignment Operators
+
+Assignment operators are used to assign values to variables.
+
+| Operator | Example | Same As |
+|:--------:|:-------:|:-------:|
+| = | x = 5 | x = 5 	
+| += | x += 3 | x = x + 3 	
+| -= | x -= 3 | x = x - 3 	
+| *= | x *= 3 | x = x * 3 	
+| /= | x /= 3 | x = x / 3 	
+| %= | x %= 3 | x = x % 3 	
+| //= | x //= 3 | x = x // 3 	
+| **= | x **= 3 | x = x ** 3 	
+| &= | x &= 3 | x = x & 3 	
+| \|= | x \|= 3 | x = x \| 3 	
+| ^= | x ^= 3 | x = x ^ 3 	
+| >>= | x >>= 3 | x = x >> 3 	
+| <<= | x <<= 3 | x = x << 3 	
+| := | print(x := 3) | x = 3, print(x)
+
+### Python Comparison Operators
+
+Comparison operators are used to compare two values.
+
+| Operator | Name | Example |
+|:--------:|:----:|:-------:|
+| == | Equal | x == y
+| != | Not equal | x != y
+| > | Greater than | x > y
+| < | Less than | x < y
+| >= | Greater than or equal to | x >= y 
+| <= | Less than or equal to | x <= y
+
+### Python Logical Operators
+
+Logical operators are used to combine conditional statements.
+
+| Operator | Description | Example |
+|:--------:|:-----------:|:-------:|
+| and  | Returns True if both statements are true | x < 5 and  x < 10 	
+| or | Returns True if one of the statements is true | x < 5 or x < 4 	
+| not | Reverse the result, returns False if the result is true | not(x < 5 and x < 10) 	
+
+### Python Identity Operators
+
+Identity operators are used to compare the objects, not if they are equal, but if they are actually the same object, with the same memory location.
+
+| Operator | Description | Example |
+|:--------:|:-----------:|:-------:|
+| is | Returns True if both variables are the same object | x is y 	
+| is not | Returns True if both variables are not the same object | x is not y 	
+
+### Python Membership Operators
+
+Membership operators are used to test if a sequence is presented in an object.
+
+| Operator | Description | Example |
+|:--------:|:-----------:|:-------:|
+| in | Returns True if a sequence with the specified value is present in the object | x in y 	
+| not in | Returns True if a sequence with the specified value is not present in the object | x not in y 	
+
+### Python Bitwise Operators
+
+Bitwise operators are used to compare (binary) numbers.
+
+| Operator | Name | Description | Example |
+|:--------:|:----:|:-----------:|:-------:|
+| &  | AND | Sets each bit to 1 if both bits are 1 | x & y 	
+| \| | OR | Sets each bit to 1 if one of two bits is 1 | x \| y 	
+| ^ | XOR | Sets each bit to 1 if only one of two bits is 1 | x ^ y 	
+| ~ | NOT | Inverts all the bits | ~x 	
+| << | Zero fill left shift | Shift left by pushing zeros in from the right and let the leftmost bits fall off | x << 2 	
+| >> | Signed right shift | Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off | x >> 2
+
+### Operator Precedence
+
+Operator precedence describes the order in which operations are performed.
+
+Parentheses has the highest precedence, meaning that expressions inside parentheses must be evaluated first:
+```py
+print((6 + 3) - (6 + 3))
+```
+
+Multiplication * has higher precedence than addition +, and therefor multiplications are evaluated before additions:
+```py
+print(100 + 5 * 3)
+```
+
+The precedence order is described in the table below, starting with the highest precedence at the top:
+| Operator | Description |
+|----------|------------|
+| () | Parentheses 	
+| ** | Exponentiation 	
+| +x  -x  ~x | Unary plus, unary minus, and bitwise NOT 	
+| *  /  //  % | Multiplication, division, floor division, and modulus 	
+| +  - | Addition and subtraction 	
+| <<  >> | Bitwise left and right shifts 	
+| & | Bitwise AND 	
+| ^ | Bitwise XOR 	
+| \| | Bitwise OR 	
+| ==  !=  >  >=  <  <=  is  is not  in  not in | Comparisons, identity, and membership operators 	
+| not | Logical NOT 	
+| and | AND 	
+| or | OR
 
 ## Python Lists
+
+### Lists
+
+Lists are used to store multiple items in a single variable.
+
+Example:
+```py
+thislist = ["apple", "banana", "cherry"]
+print(thislist)
+```
+
+List items are ordered, changeable, and allow duplicate values.
+
+List items are indexed, the first item has index [0], the second item has index [1] etc.
+
+
+When we say that lists are ordered, it means that the items have a defined order, and that order will not change.
+
+If you add new items to a list, the new items will be placed at the end of the list.
+
+
+The list is changeable, meaning that we can change, add, and remove items in a list after it has been created.
+
+
+Since lists are indexed, lists can have items with the same value.
+
+Example:
+```py
+thislist = ["apple", "banana", "cherry", "apple", "cherry"]
+print(thislist)
+```
+
+To determine how many items a list has, use the len() function.
+Example:
+```py
+thislist = ["apple", "banana", "cherry"]
+print(len(thislist))
+```
+
+A list can contain different data types. 
+
+
+### Access List Items
+
+As Python list items use 0-based indexing, the first item is item "0", and can  be accessed as below:
+```py
+print(list[0])
+```
+
+You can use negative indexing to start indexing from the end. -1 refers to the last item, -2 refers to the second last item, etc.
+
+You can also specify a range of items like this:
+```py
+print(list[2:5])
+```
+
+Or exclude an item like this:
+```py
+print(list[:4])
+```
+
+To determine if a specified item is present in a list use the in keyword:
+```py
+thislist = ["apple", "banana", "cherry"]
+if "apple" in thislist:
+  print("Yes, 'apple' is in the fruits list") 
+```
+
+### Change List Items
+
+You can also change items in a list by specifying their index value:
+```py
+thislist[1] = "blackcurrant"
+```
+
+Or a range of items:
+```py
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
+thislist[1:3] = ["blackcurrant", "watermelon"]
+```
+
+To insert a new list item, without replacing any of the existing values, we can use the insert() method.
+```py
+thislist = ["apple", "banana", "cherry"]
+thislist.insert(2, "watermelon")
+```
+
+### Add List Items
+
+To add an item to the end of the list, use the append() method:
+```py
+thislist = ["apple", "banana", "cherry"]
+thislist.append("orange")
+```
+
+To append elements from another list to the current list, use the extend() method.
+```py
+thislist = ["apple", "banana", "cherry"]
+tropical = ["mango", "pineapple", "papaya"]
+thislist.extend(tropical)
+```
+
+The extend() method does not have to append lists, you can add any iterable object (tuples, sets, dictionaries etc.).
+
+### Remove Items
+
+The remove() method removes the specified item.
+
+```py
+thislist = ["apple", "banana", "cherry"]
+thislist.remove("banana")
+```
+
+If there are more than one item with the specified value, the remove() method removes the first occurrence.
+
+The pop() method removes the specified index.
+```py
+thislist = ["apple", "banana", "cherry"]
+thislist.pop(1)
+```
+
+The "del" keyword also removes the specified index, or can delete the list completely.
+
+The clear() method empties the list.
+
+
+
 ## Python Tuples
 ## Python Sets
 ## Python Dictionaries
