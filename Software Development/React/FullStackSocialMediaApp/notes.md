@@ -1,6 +1,6 @@
 # Notes for FullStackSocialMediaApp
 ## https://www.youtube.com/watch?v=_W3R2VwRyF4
-## TIMESTAMP 2:15:12
+## TIMESTAMP 2:26:36
 
 ## Setup
 - Used vite to build the project environment, "npm create vite@latest" then selected React and Typescript, then ran "npm install" to install dependencies

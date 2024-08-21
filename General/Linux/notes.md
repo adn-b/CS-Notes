@@ -151,3 +151,24 @@ To extract tar archives, use "tar -xf archive.tar".
 
 You can also use tar in conjunction with gzip with the "-z" option.
 
+## alias
+
+
+
+"alias" is used to bind commands to short-hand letters or words. 
+
+Usage is "alias \*alias\*="\*command\*"
+
+For example "alias ll="ls -al"
+
+This alias will work until the terminal session is closed. To make it permanent, you need to add it to the shell configuration, at ~./bashrc or ~./profile or ~./bash_profile. 
+
+Be careful with quotes if you have variables in the command: using double quotes the variable is resolved at definition time, using single quotes it's resolved at invocation time. Those 2 are different:
+```bash
+alias lsthis="ls $PWD"
+alias lscurrent='ls $PWD'
+```
+
+\$PWD refers to the current folder the shell is into. If you now navigate away to a new folder, lscurrent lists the files in the new folder, lsthis still lists the files in the folder you were when you defined the alias.
+
+## 

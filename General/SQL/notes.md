@@ -91,7 +91,7 @@ In hierarchical/network DBMS's, the structure is hard-coded into the application
 SELECT ProductID, ProductName, CategoryName
 FROM Products
 INNER JOIN Categories ON Products.CategoryID = Categories.CategoryID; 
-```
+``` 
 - This is returning 3 columns, ProductID, ProductName, and CategoryName, using an inner join statement. It states the base table, or the first table in the join, "Products", and then states that "Category" will be the second table. The "ON" clause specifies that only rows where the CategoryID column in both tables are the same. Essentially, this is returning a comprehensive set of information, where information about all of the products in the "Products" table are returned, but only if their CategoryID is present in the "Categories" table.
 - Left join/left outer join - returns all records from the left table (table1), and the matching records from the right table (table2). The result is 0 records from the right side, if there is no match.
 - For example:
