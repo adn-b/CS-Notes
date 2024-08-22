@@ -57,3 +57,46 @@ SELECT * FROM movies;
 
 # Lesson 2: Queries with constraints (Pt. 1)
 
+
+
+
+
+# Lesson 6: Multi-table queries with JOINs
+
+Join statements are used after a SELECT statement and before a WHERE statement to add columns from other tables and match them with the first table based on a column/attribute.
+
+Syntax:
+```sql
+SELECT column, another_table_column, …
+FROM mytable
+INNER JOIN another_table 
+    ON mytable.id = another_table.id
+WHERE condition(s)
+```
+
+Here we can see that columns from two different tables are being selected, but only one table is being used in the FROM statement. This is because we want to return the data in the correct format, i.e. with the correct rows being matched up from both tables.
+
+So, we use INNER JOIN, which is a type of join, to join the second table, and match up rows where the "id" column/attribute in both tables are the same. This works because mytable.id is a primary key, and another_table.id is the corresponding foreign key. This ensures that there will be no redundant data/duplicates, as both are unique keys. Using joins with non unique keys can be problematic as it will return redundant data - this is why normal form/NF is used in databases.
+
+1. Find the domestic and international sales for each movie
+```sql
+SELECT Movies.Title, Boxoffice.Domestic_sales, Boxoffice.International_sales 
+    FROM Movies
+    JOIN Boxoffice ON Boxoffice.Movie_id = Movies.Id;
+```
+
+
+2. Show the sales numbers for each movie that did better internationally rather than domestically
+```sql
+SELECT Movies.Title, Boxoffice.Domestic_sales, Boxoffice.International_sales 
+    FROM Movies
+    JOIN Boxoffice ON Boxoffice.Movie_id = Movies.Id
+    WHERE Boxoffice.International_sales > Boxoffice.Domestic_sales;
+```
+
+3. List all the movies by their ratings in descending order
+```sql
+SELECT Movies.Title, Boxoffice.Rating FROM Movies
+    JOIN Boxoffice ON Boxoffice.Movie_id = Movies.Id
+    ORDER BY Boxoffice.Rating DESC;
+```
