@@ -57,9 +57,91 @@ SELECT * FROM movies;
 
 # Lesson 2: Queries with constraints (Pt. 1)
 
+Constraints can be added to queries using the "WHERE" keyword.
 
+Syntax:
+```sql
+SELECT column, another_column, …
+FROM mytable
+WHERE condition
+    AND/OR another_condition
+    AND/OR …;
+```
 
+Below are some useful operators which can be used for numerical data (integer or floating point):
 
+| Operator | Condition | SQL Example
+|-|-|-|
+| =, !=, <, <=, >, >= | Standard numerical operators | col_name != 4
+| BETWEEN … AND … | Number is within range of two values (inclusive) | col_name BETWEEN 1.5 AND 10.5
+| NOT BETWEEN … AND … | Number is not within range of two values (inclusive) | col_name NOT BETWEEN 1 AND 10
+| IN (…) | Number exists in a list | col_name IN (2, 4, 6)
+| NOT IN (…) | Number does not exist in a list | col_name NOT IN (1, 3, 5)
+
+Tasks:
+1. Find the movie with a row id of 6
+```sql
+SELECT * FROM movies
+WHERE Id = 6;
+```
+
+2. Find the movies released in the years between 2000 and 2010
+```sql
+SELECT * FROM movies
+WHERE Year BETWEEN 2000 and 2010;
+```
+
+3. Find the movies not released in the years between 2000 and 2010
+```sql
+SELECT * FROM movies
+WHERE Year NOT BETWEEN 2000 and 2010;
+```
+
+4. Find the first 5 Pixar movies and their release year
+```sql
+SELECT Title, Year FROM movies
+WHERE Id <= 5;
+```
+
+# Lesson 3: Queries with constraints (Pt. 2)
+
+There are also some constraints which are useful for columns containing text data. For example:
+
+| Operator | Condition | Example
+|-|-|-|
+| = | Case sensitive exact string comparison (notice the single equals) | col_name = "abc"
+| != or <> | Case sensitive exact string inequality comparison | col_name != "abcd"
+| LIKE | Case insensitive exact string comparison | col_name LIKE "ABC"
+| NOT LIKE | Case insensitive exact string inequality comparison | col_name NOT LIKE "ABCD"
+| % | Used anywhere in a string to match a sequence of zero or more characters (only with LIKE or NOT LIKE) | col_name LIKE "%AT%" (matches "AT", "ATTIC", "CAT" or even "BATS")
+| _ | Used anywhere in a string to match a single character (only with LIKE or NOT LIKE) | col_name LIKE "AN_" (matches "AND", but not "AN")
+| IN (…) | String exists in a list | col_name IN ("A", "B", "C")
+| NOT IN (…) | String does not exist in a list | col_name NOT IN ("D", "E", "F")
+
+Tasks:
+1. Find all the Toy Story movies
+```sql
+SELECT * FROM movies
+WHERE Title LIKE "%Toy Story%";
+```
+
+2. Find all the movies directed by John Lasseter
+```sql
+SELECT * FROM movies
+WHERE Director LIKE "%John Lasseter%";
+```
+
+3. Find all the movies (and director) not directed by John Lasseter
+```sql
+SELECT * FROM movies
+WHERE Director NOT LIKE "%John Lasseter%"
+```
+
+4. Find all the WALL-* movies
+```sql
+SELECT * FROM movies
+WHERE Title LIKE "%WALL-_%"
+```
 
 # Lesson 6: Multi-table queries with JOINs
 
@@ -78,13 +160,13 @@ Here we can see that columns from two different tables are being selected, but o
 
 So, we use INNER JOIN, which is a type of join, to join the second table, and match up rows where the "id" column/attribute in both tables are the same. This works because mytable.id is a primary key, and another_table.id is the corresponding foreign key. This ensures that there will be no redundant data/duplicates, as both are unique keys. Using joins with non unique keys can be problematic as it will return redundant data - this is why normal form/NF is used in databases.
 
+Tasks:
 1. Find the domestic and international sales for each movie
 ```sql
 SELECT Movies.Title, Boxoffice.Domestic_sales, Boxoffice.International_sales 
     FROM Movies
     JOIN Boxoffice ON Boxoffice.Movie_id = Movies.Id;
 ```
-
 
 2. Show the sales numbers for each movie that did better internationally rather than domestically
 ```sql
